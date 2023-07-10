@@ -1,0 +1,28 @@
+name: 'Jira Release Notes Generator'
+description: 'This action generates release notes markdown from Jira project by release version'
+branding:
+  icon: "file-text"
+  color: "blue"
+
+inputs:
+  domain:
+    description: 'Domain name(https://your-domain.atlassian.net)'
+    required: true
+  project:
+    description: 'Project name'
+    required: true
+  version:
+    description: 'Version name'
+    required: true
+  auth-token:
+    description: 'Jira API token key'
+    required: true
+
+outputs:
+  release_notes:
+    description: 'Release notes (Markdown format)'
+  release_notes_url:
+    description: 'Jira release notes url'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
