@@ -1,4 +1,4 @@
-name: 'Jira Release Notes Generator'
+name: 'Release Notes Generator from Jire Release'
 description: 'This action generates release notes markdown from Jira project by release version'
 branding:
   icon: "file-text"
