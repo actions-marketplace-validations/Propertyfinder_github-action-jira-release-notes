@@ -1,5 +1,5 @@
 # Jira Release Notes
-This action generate release notes markdown from Jira project by replease version
+This action generate release notes markdown from Jira project by release version
 
 ```markdown
 # [Jira](https://your-domain.atlassian.net/projects/project-id/versions/versionJiraId)
