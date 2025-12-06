@@ -69,7 +69,7 @@ async function getMarkdownReleaseNotes(baseUrl, project, version, token, release
     return title + note;
 }
 function getTitle(response, version, releaseNotesUrl) {
-    return `# [Jira](${releaseNotesUrl})`;
+    return `## [Jira](${releaseNotesUrl})`;
 }
 function getNote(response, baseUrl) {
     const groupedIssues = getGroupedIssues(response.issues, baseUrl);
@@ -90,7 +90,7 @@ function getGroupedIssues(rawValue, baseUrl) {
         const key = value.key;
         const url = baseUrl + "browse/" + key;
         const fields = value.fields;
-        const summary = fields.summary;
+        const summary = fields.summary.replace(/"/g, "\`").replace(/'/g, "\`");
         const type = fields.issuetype.name;
         return new Issue(key, summary, type, url);
     }).sort((a, b) => {
